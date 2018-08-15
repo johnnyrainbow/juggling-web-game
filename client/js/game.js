@@ -206,6 +206,7 @@ function gameSetup() {
 
 function clearGameBackground() {
 
+
 	background(bg);
 }
 
@@ -309,7 +310,7 @@ function clipLine() {
 	
 
 	function draw() {
-	
+		background(0);
 		clearGameBackground();
 		drawCanvas(CANVAS_DATA);
 		drawBounds();
