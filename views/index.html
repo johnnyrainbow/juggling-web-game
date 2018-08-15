@@ -1,0 +1,110 @@
+<html>
+<head>
+  <title>Express HTML</title>
+
+  <script src="/client/js/libraries/p5.min.js"></script>
+  <script src="../client/js/toolbar.js"></script>
+  <script src="../client/js/ball.js"></script>
+  <script src="../client/js/item.js"></script>
+  <script src="../client/js/menu.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../client/js/game.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/client/css/nocursor.css">
+  <script src="/client/js/libraries/p5.collide2d.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/client/js/libraries/p5.scribble.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+       
+<script> 
+
+
+    //setup();
+    var canvData, eraseData;
+    console.log("working");
+  
+    var socket = io();
+
+  function redrawCanvas(data) {
+  
+  if(data == null || data.length < 1) return;
+    for(var i=0;i<data.length-1;i++) {
+  //stroke(255);
+  brushTool(data[i].col);
+      drawLine(data[i].x,data[i].y,data[i].px,data[i].py);
+  
+  }
+  }
+    /*socket.on('canvas', function(data) {
+      //if(STATE != "GAME") return;
+  canvData = data;
+  
+    redrawCanvas(canvData);
+    });*/
+  
+  function redrawCanvasErase(data) {
+  eraserTool();
+    if(data == null || data.length < 1) return;
+  
+    for(var i=0;i<data.length-1;i++) {
+  
+      drawLine(data[i].x,data[i].y,data[i].px,data[i].py);
+  }
+  
+  
+  }
+  socket.on('serverBestScores', function(data) {
+  
+  leaderBoardArray = data;
+  
+  console.log("ARRAY best score IS " + leaderBoardArray[0].score);
+    });
+  
+  
+
+  /*socket.on('canvasErase', function(data) {
+    //if(STATE != "GAME") return;
+  eraseData = data;
+  redrawCanvasErase(eraseData);
+    });*/
+    
+  
+    /*socket.on('eraseBlots', function(data) {
+      //if(STATE != "GAME") return;
+          eraserTool();
+          
+      drawLine(data.x,data.y,data.px,data.py);
+    
+  
+  
+    });*/
+    /*socket.on('newBlots', function(data) {
+      //if(STATE != "GAME") return;
+  brushTool(data.col);
+      drawLine(data.x,data.y,data.px,data.py);
+    
+    });*/
+  
+     /*socket.on('clearPane', function(data) {
+       //if(STATE != "GAME") return;
+    console.log("clear pane");
+    clearGameBackground();
+    
+    });*/
+   
+    
+  
+  
+    
+    var msg = function() {
+    socket.emit('clientMessage', { //when func called, client  sends message 'serverMessage' containing message data 'hello'.
+    message: 'hello server!'
+    });
+  }
+  
+  
+  </script>
+  </body>
+</html>
