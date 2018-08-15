@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 var server = http.createServer(app);
 
 var io = require('socket.io').listen(server);
-server.listen(port);
+server.listen(process.env.PORT || port);
 
 app.get('/', function (req,res) {
   console.log("WOW RENDER");
