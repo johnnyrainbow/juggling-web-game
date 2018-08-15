@@ -44,7 +44,9 @@ function renderLeaderboard() {
 	text("Name",largeMenu.x + largeMenu.w/5 + 110,largeMenu.y+120 );
 	text("Score",largeMenu.x + largeMenu.w/5 + 380,largeMenu.y+120 );
 	//text("#",leaderBoardBackdrop.x -60 ,largeMenu.y+120 );
+
 	for(var i=0;i<leaderBoardArray.length;i++) {
+		fill(0);
 	text(leaderBoardArray[i].nickname ,largeMenu.x + largeMenu.w/2.8 - 20,largeMenu.y+210 + i*90);
 	line(leaderBoardBackdrop.x +leaderBoardBackdrop.w/1.3,leaderBoardBackdrop.y,leaderBoardBackdrop.x +leaderBoardBackdrop.w/1.3,leaderBoardBackdrop.y +leaderBoardBackdrop.h );
 	line(leaderBoardBackdrop.x - 100,leaderBoardBackdrop.y,leaderBoardBackdrop.x -100,leaderBoardBackdrop.y +leaderBoardBackdrop.h );
@@ -53,6 +55,7 @@ function renderLeaderboard() {
 	} else {
 	text(leaderBoardArray[i].score ,leaderBoardBackdrop.x + leaderBoardBackdrop.w/1.18 ,largeMenu.y+210 + i*90);
 	}
+	fill(255);
 	text((i+1),leaderBoardBackdrop.x - 45,largeMenu.y+210 + i*90);
 	text("#" ,leaderBoardBackdrop.x - 95,largeMenu.y+210 + i*90);
 	line(leaderBoardBackdrop.x - 100,leaderBoardBackdrop.y + i*90,leaderBoardBackdrop.x + leaderBoardBackdrop.w,leaderBoardBackdrop.y + i*90);
@@ -64,7 +67,7 @@ function addLeaderBoardButton() {
 
 	fill(255,0,0);
 	rect(leaderboardButton.x,leaderboardButton.y,leaderboardButton.w,leaderboardButton.h);
-	fill(0);
+	fill(255);
 	text("Leaderboard",mainMenu.x+mainMenu.w/5,leaderboardButton.y + leaderboardButton.h/1.5);
 }
 function renderGameOverMenu() {
