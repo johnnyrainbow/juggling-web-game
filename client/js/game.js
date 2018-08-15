@@ -57,7 +57,7 @@ function setup() {
 	generateCircleImage(0,255,0,2);
 	generateCircleImage(5, 109, 188,3);
 
-	createCanvas(windowWidth, $(window).height());
+	createCanvas(windowWidth, windowHeight);
 	textFont("Indie Flower")
 	if (STATE == "LOBBY") {
 		lobbyMenuSetup();
