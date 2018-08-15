@@ -79,7 +79,7 @@ function renderGameOverMenu() {
 
 	rect(largeMenu.x,largeMenu.y,largeMenu.w,largeMenu.h);
 	
-	 fill(255,0,0);
+	
 	 rect(mainMenu.x, mainMenu.y ,mainMenu.w,mainMenu.h);
 	fill(255);
 	
