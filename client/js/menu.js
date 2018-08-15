@@ -64,7 +64,7 @@ function addLeaderBoardButton() {
 
 	fill(255,0,0);
 	rect(leaderboardButton.x,leaderboardButton.y,leaderboardButton.w,leaderboardButton.h);
-	fill(255);
+	fill(0);
 	text("Leaderboard",mainMenu.x+mainMenu.w/5,leaderboardButton.y + leaderboardButton.h/1.5);
 }
 function renderGameOverMenu() {
