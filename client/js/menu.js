@@ -76,7 +76,7 @@ function renderGameOverMenu() {
 	strokeWeight(1);
 	
 		
-	fill(0);
+	noFill();
 	rect(largeMenu.x,largeMenu.y,largeMenu.w,largeMenu.h);
 	
 	
