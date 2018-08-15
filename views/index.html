@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Express HTML</title>
+  <title>Ball Game</title>
 
   <script src="/client/js/libraries/p5.min.js"></script>
   <script src="../client/js/toolbar.js"></script>
@@ -15,7 +15,7 @@
   <script language="javascript" type="text/javascript" src="/client/js/libraries/p5.scribble.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body>
+
 
        
 <script> 
@@ -23,8 +23,7 @@
 
     //setup();
     var canvData, eraseData;
-    console.log("working");
-  
+
     var socket = io();
 
   function redrawCanvas(data) {
@@ -37,13 +36,7 @@
   
   }
   }
-    /*socket.on('canvas', function(data) {
-      //if(STATE != "GAME") return;
-  canvData = data;
-  
-    redrawCanvas(canvData);
-    });*/
-  
+
   function redrawCanvasErase(data) {
   eraserTool();
     if(data == null || data.length < 1) return;
@@ -64,47 +57,6 @@
   
   
 
-  /*socket.on('canvasErase', function(data) {
-    //if(STATE != "GAME") return;
-  eraseData = data;
-  redrawCanvasErase(eraseData);
-    });*/
-    
-  
-    /*socket.on('eraseBlots', function(data) {
-      //if(STATE != "GAME") return;
-          eraserTool();
-          
-      drawLine(data.x,data.y,data.px,data.py);
-    
-  
-  
-    });*/
-    /*socket.on('newBlots', function(data) {
-      //if(STATE != "GAME") return;
-  brushTool(data.col);
-      drawLine(data.x,data.y,data.px,data.py);
-    
-    });*/
-  
-     /*socket.on('clearPane', function(data) {
-       //if(STATE != "GAME") return;
-    console.log("clear pane");
-    clearGameBackground();
-    
-    });*/
-   
-    
-  
-  
-    
-    var msg = function() {
-    socket.emit('clientMessage', { //when func called, client  sends message 'serverMessage' containing message data 'hello'.
-    message: 'hello server!'
-    });
-  }
-  
-  
   </script>
-  </body>
+
 </html>
