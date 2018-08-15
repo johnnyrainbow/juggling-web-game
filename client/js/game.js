@@ -52,7 +52,7 @@ if(type == 1) {
 }
 }
 function setup() {
-
+	background(0);
 	generateCircleImage(252, 92, 0,1);
 	generateCircleImage(0,255,0,2);
 	generateCircleImage(5, 109, 188,3);
@@ -309,7 +309,7 @@ function clipLine() {
 	
 
 	function draw() {
-
+	
 		clearGameBackground();
 		drawCanvas(CANVAS_DATA);
 		drawBounds();
